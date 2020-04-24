@@ -45,7 +45,7 @@
 
 **initial investment for each energy**
     ```python
-    # costos iniciales por kW
+      # costos iniciales por kW
       on_cost_per_source = {
           'solar': [1331, 1313, 1100],
           'wind': [1100, 1500, 1319],
@@ -56,7 +56,7 @@
           'oil': [1170, 1175, 713], # usamos steam engine como tipo de oil fired power plant
         }
     ```
-    source:
+  source:
     - https://www.irena.org/costs/Power-Generation-Costs/Hydropower
     - https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2019/May/IRENA_Renewable-Power-Generations-Costs-in-2018.pdf
     - https://www.eia.gov/analysis/studies/powerplants/capitalcost/pdf/capital_cost_AEO2020.pdf
