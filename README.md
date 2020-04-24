@@ -53,7 +53,8 @@
           'nuclear': [6041, 6317, 6900, 12000],
           'gas': [950, 713, 1084, 1300],
           'coal': [3000, 6250, 5876, 3676],
-          'oil': [1170, 1175, 713], # usamos steam engine como tipo de oil fired power plant
+          'oil': [1170, 1175, 713],
+
         }
     ```
   source:
