@@ -3,7 +3,7 @@
 - can i import gurobipy into a vm or requirements.txt and upload to github? binder?
 
 
-**TO-DO**:
+### TO-DO :
 - [] buscar datos para todos los parametros (con medias y desviaciones estandar)
 - [] armar set de datos de 3 tamanos distintos
 - [] crear jupyter notebook online
