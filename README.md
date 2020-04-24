@@ -11,6 +11,22 @@
 - [ ] armar modelo y resolver
 - [ ] analizar resultados
 
+### Datos recolectados:
+1. [x] tipos de energia (i)
+2. [x] periodos de tiempo (t)
+3. [ ] presupuesto (P) &rightarrow; depende de la demanda que ocupemos
+4. [x] valor GWh (S)
+5. [x] costo por unidad construida (CI_i) &rightarrow; costo por kW de capacidad
+6. [x] costo produccion GWh (C_i)
+7. [x] contaminacion por unidad construida (ZI_i) &rightarrow; tenemos contaminacion por unidad producida que contempla contaminacion inicial
+8. [x] contaminacion por GWh producido
+9. [x] capacidad por unidad construida (K_i) &rightarrow; capacidad en kW/GW construidos
+10. [ ] demanda por periodo (D_t)
+11. [x] costo por almacenamiento (A) &rightarrow; costo por capacidad en kW
+12. [ ] perdida de energia por almacenamiento (constante)
+13. [ ] contaminacion de almacenamiento de unidad energ. (Alpha_i)
+14. [ ] cantidad maxima de instalaciones por energia (QM_i)
+
 
 
 # research:
@@ -32,7 +48,7 @@ source: https://bit.ly/3eNkc3O
 
 ---
 
-**pollution for each GWh produced by each energy**
+**pollution for each GWh produced by energy**
 
 ```python
 tonnes_CO2_per_GWh = {
