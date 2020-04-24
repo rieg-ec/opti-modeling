@@ -45,7 +45,7 @@
 
 **initial investment for each energy**
     ```python
-      # costos iniciales por kW
+    
       on_cost_per_source = {
           'solar': [1331, 1313, 1100],
           'wind': [1100, 1500, 1319],
