@@ -30,6 +30,8 @@ it with highest cost energy
 * 10.21 cents per kWh average, 15.8 cents in Chile
 source: https://bit.ly/3eNkc3O
 
+---
+
 **pollution for each GWh produced by each energy**
 
 ```python
@@ -45,8 +47,12 @@ tonnes_CO2_per_GWh = {
 ```
 source: https://bit.ly/3eOQdZ4
 
+---
+
 **GWh limit per unit in each energy**
 * el limite estara dado por los kW de capacidad construidos
+
+---
 
 **initial investment for each energy**
 
@@ -70,9 +76,11 @@ source:
 - https://www.eia.gov/outlooks/aeo/assumptions/pdf/table_8.2.pdf
 - https://www.lazard.com/media/451086/lazards-levelized-cost-of-energy-version-130-vf.pdf
 
+---
 
 **initial  construction pollution**
 
+---
 
 **price of GW storage**
 ```python
@@ -83,10 +91,14 @@ source:
 - https://www.eia.gov/analysis/studies/powerplants/capitalcost/pdf/capital_cost_AEO2020.pdf
 - https://www.eia.gov/outlooks/aeo/assumptions/pdf/table_8.2.pdf
 
+---
 
 **loss of energy when storing in batteries**
 
+---
+
 **pollution for each battery**
 
+---
 
 **max energy centrals per energy allowed**
