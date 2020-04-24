@@ -18,10 +18,13 @@
 **budget**
 * at least a couple different budget situations
 
+---
+
 **GWh demand for each period**
 * will correlate to budget, basically the lower limit is satisfying all population with cheapest energy, upper limit is doing
 it with highest cost energy
 
+---
 
 **GWh price in market**
 * 10.21 cents per kWh average, 15.8 cents in Chile
