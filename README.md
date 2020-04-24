@@ -10,10 +10,11 @@
   *
 
 
-**research**:
 
-* what would be our budget
-*at least a couple different budget situations
+#research:
+
+**budget**
+  * at least a couple different budget situations
 
 **GWh demand for each period**
   * will correlate to budget, basically the lower limit is satisfying all population with cheapest energy, upper limit is doing
@@ -21,9 +22,10 @@
 
 
 **GWh price in market**
-  * 10.21 cents per kWh average, 15.8 cents in Chile --> https://bit.ly/3eNkc3O
+  * 10.21 cents per kWh average, 15.8 cents in Chile
+  source: https://bit.ly/3eNkc3O
 
-**pollution for each GWh produced by each energy** --> https://bit.ly/3eOQdZ4
+**pollution for each GWh produced by each energy**
 
   ```python
     tonnes_CO2_per_GWh = {
@@ -36,7 +38,7 @@
         'oil': 733,
       }
   ```
-
+  source: https://bit.ly/3eOQdZ4
 
 **GWh limit per unit in each energy**
   * el limite estara dado por los kW de capacidad construidos
@@ -62,20 +64,21 @@
     - https://www.lazard.com/media/451086/lazards-levelized-cost-of-energy-version-130-vf.pdf
 
 
-    # initial  construction pollution
+**initial  construction pollution**
 
 
-    **price of GW storage**
-      ```python
-        price_per_kw_storage = [1389, 845, 1383]
-      ```
-      source:
-      - https://www.eia.gov/analysis/studies/powerplants/capitalcost/pdf/capital_cost_AEO2020.pdf
-      - https://www.eia.gov/outlooks/aeo/assumptions/pdf/table_8.2.pdf
+**price of GW storage**
+  ```python
+    price_per_kw_storage = [1389, 845, 1383]
+  ```
+  source:
+  - https://www.eia.gov/analysis/studies/powerplants/capitalcost/pdf/capital_cost_AEO2020.pdf
+  - https://www.eia.gov/outlooks/aeo/assumptions/pdf/table_8.2.pdf
 
 
-    # loss of energy when storing in batteries
-    # pollution for each battery
+**loss of energy when storing in batteries**
+
+**pollution for each battery**
 
 
-    # max energy centrals per energy allowed
+**max energy centrals per energy allowed**
