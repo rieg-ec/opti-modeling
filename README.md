@@ -10,32 +10,32 @@
   *
 
 
-  **research**:
+**research**:
 
-    # what would be our budget
-      * at least a couple different budget situations
+- what would be our budget
+  - at least a couple different budget situations
 
-    # GWh demand for each period
-      * will correlate to budget, basically the lower limit is satisfying all population with cheapest energy, upper limit is doing
-      it with highest cost energy
+# GWh demand for each period
+  * will correlate to budget, basically the lower limit is satisfying all population with cheapest energy, upper limit is doing
+  it with highest cost energy
 
 
-    **# GWh price in market**
-      * 10.21 cents per kWh average, 15.8 cents in Chile --> https://bit.ly/3eNkc3O
+**# GWh price in market**
+  * 10.21 cents per kWh average, 15.8 cents in Chile --> https://bit.ly/3eNkc3O
 
-    **# pollution for each GWh produced by each energy** --> https://bit.ly/3eOQdZ4
+**# pollution for each GWh produced by each energy** --> https://bit.ly/3eOQdZ4
 
-      ```python
-        tonnes_CO2_per_GWh = {
-            'solar': 85,
-            'wind': 26,
-            'hydroelectric': 26,
-            'nuclear': 29,
-            'gas': 499,
-            'coal': 888,
-            'oil': 733,
-          }
-      ```
+  ```python
+    tonnes_CO2_per_GWh = {
+        'solar': 85,
+        'wind': 26,
+        'hydroelectric': 26,
+        'nuclear': 29,
+        'gas': 499,
+        'coal': 888,
+        'oil': 733,
+      }
+  ```
 
 
     **# GWh limit per unit in each energy**
