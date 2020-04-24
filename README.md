@@ -46,7 +46,8 @@
 **initial investment for each energy**
 
 ```python
-  on_cost_per_source = {
+# overnight costs taken from different sources for each enrgy type
+  overnight_cost_per_source = {
       'solar': [1331, 1313, 1100],
       'wind': [1100, 1500, 1319],
       'hydroelectric': [5316, 1750, 7500, 3500],
