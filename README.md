@@ -44,8 +44,8 @@
   * el limite estara dado por los kW de capacidad construidos
 
 **initial investment for each energy**
+
     ```python
-    
       on_cost_per_source = {
           'solar': [1331, 1313, 1100],
           'wind': [1100, 1500, 1319],
