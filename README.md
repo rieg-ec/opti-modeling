@@ -58,24 +58,25 @@
 
     }
 ```
-  source:
-    - https://www.irena.org/costs/Power-Generation-Costs/Hydropower
-    - https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2019/May/IRENA_Renewable-Power-Generations-Costs-in-2018.pdf
-    - https://www.eia.gov/analysis/studies/powerplants/capitalcost/pdf/capital_cost_AEO2020.pdf
-    - https://www.eia.gov/outlooks/aeo/assumptions/pdf/table_8.2.pdf
-    - https://www.lazard.com/media/451086/lazards-levelized-cost-of-energy-version-130-vf.pdf
+source:
+  - https://www.irena.org/costs/Power-Generation-Costs/Hydropower
+  - https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2019/May/IRENA_Renewable-Power-Generations-Costs-in-2018.pdf
+  - https://www.eia.gov/analysis/studies/powerplants/capitalcost/pdf/capital_cost_AEO2020.pdf
+  - https://www.eia.gov/outlooks/aeo/assumptions/pdf/table_8.2.pdf
+  - https://www.lazard.com/media/451086/lazards-levelized-cost-of-energy-version-130-vf.pdf
 
 
 **initial  construction pollution**
 
 
 **price of GW storage**
-  ```python
-    price_per_kw_storage = [1389, 845, 1383]
-  ```
-  source:
-  - https://www.eia.gov/analysis/studies/powerplants/capitalcost/pdf/capital_cost_AEO2020.pdf
-  - https://www.eia.gov/outlooks/aeo/assumptions/pdf/table_8.2.pdf
+```python
+  # price for storing a kWh from different sources
+  price_per_kw_storage = [1389, 845, 1383]
+```
+source:
+- https://www.eia.gov/analysis/studies/powerplants/capitalcost/pdf/capital_cost_AEO2020.pdf
+- https://www.eia.gov/outlooks/aeo/assumptions/pdf/table_8.2.pdf
 
 
 **loss of energy when storing in batteries**
