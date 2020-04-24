@@ -27,17 +27,17 @@
 
 **pollution for each GWh produced by each energy**
 
-  ```python
-    tonnes_CO2_per_GWh = {
-        'solar': 85,
-        'wind': 26,
-        'hydroelectric': 26,
-        'nuclear': 29,
-        'gas': 499,
-        'coal': 888,
-        'oil': 733,
-      }
-  ```
+```python
+  tonnes_CO2_per_GWh = {
+      'solar': 85,
+      'wind': 26,
+      'hydroelectric': 26,
+      'nuclear': 29,
+      'gas': 499,
+      'coal': 888,
+      'oil': 733,
+    }
+```
   source: https://bit.ly/3eOQdZ4
 
 **GWh limit per unit in each energy**
@@ -45,18 +45,18 @@
 
 **initial investment for each energy**
 
-    ```python
-      on_cost_per_source = {
-          'solar': [1331, 1313, 1100],
-          'wind': [1100, 1500, 1319],
-          'hydroelectric': [5316, 1750, 7500, 3500],
-          'nuclear': [6041, 6317, 6900, 12000],
-          'gas': [950, 713, 1084, 1300],
-          'coal': [3000, 6250, 5876, 3676],
-          'oil': [1170, 1175, 713],
+```python
+  on_cost_per_source = {
+      'solar': [1331, 1313, 1100],
+      'wind': [1100, 1500, 1319],
+      'hydroelectric': [5316, 1750, 7500, 3500],
+      'nuclear': [6041, 6317, 6900, 12000],
+      'gas': [950, 713, 1084, 1300],
+      'coal': [3000, 6250, 5876, 3676],
+      'oil': [1170, 1175, 713],
 
-        }
-    ```
+    }
+```
   source:
     - https://www.irena.org/costs/Power-Generation-Costs/Hydropower
     - https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2019/May/IRENA_Renewable-Power-Generations-Costs-in-2018.pdf
