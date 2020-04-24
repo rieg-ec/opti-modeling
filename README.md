@@ -12,18 +12,18 @@
 
 **research**:
 
-- what would be our budget
-  - at least a couple different budget situations
+* what would be our budget
+*at least a couple different budget situations
 
-# GWh demand for each period
+**GWh demand for each period**
   * will correlate to budget, basically the lower limit is satisfying all population with cheapest energy, upper limit is doing
   it with highest cost energy
 
 
-**# GWh price in market**
+**GWh price in market**
   * 10.21 cents per kWh average, 15.8 cents in Chile --> https://bit.ly/3eNkc3O
 
-**# pollution for each GWh produced by each energy** --> https://bit.ly/3eOQdZ4
+**pollution for each GWh produced by each energy** --> https://bit.ly/3eOQdZ4
 
   ```python
     tonnes_CO2_per_GWh = {
@@ -38,10 +38,10 @@
   ```
 
 
-    **# GWh limit per unit in each energy**
-      * el limite estara dado por los kW de capacidad construidos
+**GWh limit per unit in each energy**
+  * el limite estara dado por los kW de capacidad construidos
 
-    **# initial investment for each energy**
+**initial investment for each energy**
     ```python
     # costos iniciales por kW
       on_cost_per_source = {
