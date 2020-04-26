@@ -1,6 +1,3 @@
-# tools:
-- use binder to allow others to interact with notes
-- can i import gurobipy into a vm or requirements.txt and upload to github? binder?
 
 
 ### TO-DO
