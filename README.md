@@ -11,15 +11,15 @@
 ### Datos recolectados:
 1. [x] tipos de energia (i)
 2. [x] periodos de tiempo (t)
-3. [ ] presupuesto (P) &rightarrow; depende de la demanda que ocupemos
+3. [ ] presupuesto (P) &rightarrow; depende de la demanda que ocupemos, la idea es probar con distintos presupuestos
 4. [x] valor GWh (S)
 5. [x] costo por unidad construida (CI_i) &rightarrow; costo por kW de capacidad
 6. [x] costo produccion GWh (C_i)
 7. [x] contaminacion por unidad construida (ZI_i) &rightarrow; tenemos contaminacion por unidad producida que contempla contaminacion inicial
 8. [x] contaminacion por GWh producido
 9. [x] capacidad por unidad construida (K_i) &rightarrow; capacidad en kW/GW construidos
-10. [ ] demanda por periodo (D_t)
-11. [x] costo por almacenamiento (A) &rightarrow; costo por capacidad en kW
+10. [ ] demanda por periodo (D_t) &rightarrow; la idea tambien es probar con distintas demandas simulandon ciudades pequenas con bajo presupuesto o ciudades mas ricas
+11. [x] costo por almacenamiento (A) &rightarrow; costo por capacidad en kW, la inversion es inicial
 12. [ ] perdida de energia por almacenamiento (constante)
 13. [ ] contaminacion de almacenamiento de unidad energ. (Alpha_i)
 14. [ ] cantidad maxima de instalaciones por energia (QM_i)
@@ -29,23 +29,46 @@
 # research:
 
 **budget**
-* at least a couple different budget situations
+*
 
 ---
 
-**GWh demand for each period**
-* will correlate to budget, basically the lower limit is satisfying all population with cheapest energy, upper limit is doing
-it with highest cost energy
+**Demanda por periodo**
+*
 
 ---
 
 **GWh price in market**
 * 10.21 cents per kWh average, 15.8 cents in Chile
-source: https://bit.ly/3eNkc3O
+en pesos: 87.55 y 135 pesos respectivamente
+source:
+- https://bit.ly/3eNkc3O
+- https://es.globalpetrolprices.com/Chile/electricity_prices/
 
 ---
 
-**pollution for each GWh produced by energy**
+**GWh production costs (without capital costs) in cents per kWh**
+```python
+production_cost = {
+    'solar': [0.17, 0.136],
+    'wind': [0.3, 0.32],
+    'hydroelectric': 0.5,
+    'nuclear': [2.10, 1.38, 1.6],
+    'gas': [2.1],
+    'coal': [0.98, 1.4, 1.73],
+    'oil': [5.4, 7.01, 5.63],
+}
+```
+
+source:
+- https://www.statista.com/statistics/519144/power-plant-operation-and-maintenance-costs-in-the-us-by-technology/
+- https://www.instituteforenergyresearch.org/renewable/electric-generating-costs-a-primer/
+- https://www.lazard.com/media/450784/lazards-levelized-cost-of-energy-version-120-vfinal.pdf
+- https://www.nrel.gov/docs/fy11osti/48595.pdf
+
+---
+
+**pollution per unit of production**
 
 ```python
 tonnes_CO2_per_GWh = {
@@ -67,7 +90,7 @@ source: https://bit.ly/3eOQdZ4
 
 ---
 
-**initial investment for each energy**
+**initial investment by energy source**
 
 ```python
 # overnight costs taken from different sources for each enrgy type
