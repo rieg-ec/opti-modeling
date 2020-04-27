@@ -38,8 +38,9 @@
 
 ---
 
-- [x] *Precio de un kWh*
-* 10.21 cents per kWh average, 15.8 cents in Chile
+- [x] **Precio de un kWh**
+
+10.21 cents per kWh average, 15.8 cents in Chile
 en pesos: 87.55 y 135 pesos respectivamente
 
 fuente:
@@ -49,6 +50,7 @@ fuente:
 ---
 
 - [x] **Costo de produccion sin contar inversion inicial por kWh producido**
+
 ```python
 production_cost = {
     'solar': [0.17, 0.136],
@@ -70,6 +72,7 @@ fuente:
 ---
 
 - [x] **Contaminacion por produccion**
+
 Actualmente en GWh
 
 ```python
@@ -88,7 +91,8 @@ fuente: https://bit.ly/3eOQdZ4
 ---
 
 - [x] **El limite esta dado por la capacidad en kW**
-  el limite estara dado por los kW de capacidad construidos
+
+el limite estara dado por los kW de capacidad construidos
 
 ---
 
@@ -123,6 +127,7 @@ El parametro contaminacion por produccion incluye este tipo de contaminacion
 ---
 
 - [x] **Precio por capacidad de almacenamiento**
+
 ```python
 # price for storing a kWh from different fuentes
 price_per_kw_storage = [1389, 845, 1383]
