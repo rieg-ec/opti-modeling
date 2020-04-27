@@ -28,26 +28,26 @@
 
 # research:
 
-**budget**
-*
+- [ ] **presupuesto**
+
 
 ---
 
-**Demanda por periodo**
-*
+- [ ] **Demanda por periodo**
+
 
 ---
 
-**GWh price in market**
-* 10.21 cents per kWh average, 15.8 cents in Chile
+- [x] **Precio de un kWh**
+10.21 cents per kWh average, 15.8 cents in Chile
 en pesos: 87.55 y 135 pesos respectivamente
-source:
+fuente:
 - https://bit.ly/3eNkc3O
 - https://es.globalpetrolprices.com/Chile/electricity_prices/
 
 ---
 
-**GWh production costs (without capital costs) in cents per kWh**
+- [x] **Costo de produccion sin contar inversion inicial por kWh producido**
 ```python
 production_cost = {
     'solar': [0.17, 0.136],
@@ -60,7 +60,7 @@ production_cost = {
 }
 ```
 
-source:
+fuente:
 - https://www.statista.com/statistics/519144/power-plant-operation-and-maintenance-costs-in-the-us-by-technology/
 - https://www.instituteforenergyresearch.org/renewable/electric-generating-costs-a-primer/
 - https://www.lazard.com/media/450784/lazards-levelized-cost-of-energy-version-120-vfinal.pdf
@@ -68,7 +68,8 @@ source:
 
 ---
 
-**pollution per unit of production**
+- [x] **Contaminacion por produccion**
+Actualmente en GWh
 
 ```python
 tonnes_CO2_per_GWh = {
@@ -81,20 +82,20 @@ tonnes_CO2_per_GWh = {
     'oil': 733,
   }
 ```
-source: https://bit.ly/3eOQdZ4
+fuente: https://bit.ly/3eOQdZ4
 
 ---
 
-**GWh limit per unit in each energy**
-* el limite estara dado por los kW de capacidad construidos
+- [x] **El limite esta dado por la capacidad en kW**
+el limite estara dado por los kW de capacidad construidos
 
 ---
 
-**initial investment by energy source**
+- [x] **Inversion inicial por energia por kW de capacidad**
 
 ```python
-# overnight costs taken from different sources for each enrgy type
-overnight_cost_per_source = {
+# overnight costs taken from different fuentes for each enrgy type
+overnight_cost_per_kW = {
     'solar': [1331, 1313, 1100],
     'wind': [1100, 1500, 1319],
     'hydroelectric': [5316, 1750, 7500, 3500],
@@ -105,7 +106,7 @@ overnight_cost_per_source = {
 
   }
 ```
-source:
+fuente:
 - https://www.irena.org/costs/Power-Generation-Costs/Hydropower
 - https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2019/May/IRENA_Renewable-Power-Generations-Costs-in-2018.pdf
 - https://www.eia.gov/analysis/studies/powerplants/capitalcost/pdf/capital_cost_AEO2020.pdf
@@ -114,27 +115,29 @@ source:
 
 ---
 
-**initial  construction pollution**
+- [ ] **Contaminacion por construccion inicial**
+
+El parametro contaminacion por produccion incluye este tipo de contaminacion
 
 ---
 
-**price of GW storage**
+- [x] **Precio por capacidad de almacenamiento**
 ```python
-# price for storing a kWh from different sources
+# price for storing a kWh from different fuentes
 price_per_kw_storage = [1389, 845, 1383]
 ```
-source:
+fuente:
 - https://www.eia.gov/analysis/studies/powerplants/capitalcost/pdf/capital_cost_AEO2020.pdf
 - https://www.eia.gov/outlooks/aeo/assumptions/pdf/table_8.2.pdf
 
 ---
 
-**loss of energy when storing in batteries**
+- [ ] **Perdida de energia por almacenamiento**
 
 ---
 
-**pollution for each battery**
+- [ ] **Contaminacion por bateria**
 
 ---
 
-**max energy centrals per energy allowed**
+- [ ] **Limite de plantas de energia**
