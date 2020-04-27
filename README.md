@@ -39,8 +39,9 @@
 ---
 
 - [x] **Precio de un kWh**
-10.21 cents per kWh average, 15.8 cents in Chile
-en pesos: 87.55 y 135 pesos respectivamente
+  10.21 cents per kWh average, 15.8 cents in Chile
+  en pesos: 87.55 y 135 pesos respectivamente
+
 fuente:
 - https://bit.ly/3eNkc3O
 - https://es.globalpetrolprices.com/Chile/electricity_prices/
@@ -87,7 +88,7 @@ fuente: https://bit.ly/3eOQdZ4
 ---
 
 - [x] **El limite esta dado por la capacidad en kW**
-el limite estara dado por los kW de capacidad construidos
+  el limite estara dado por los kW de capacidad construidos
 
 ---
 
