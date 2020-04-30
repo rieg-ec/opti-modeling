@@ -18,6 +18,7 @@
 
 8. [x] contaminacion por GWh producido &rightarrow; contempla todas las fases de la produccion
 9. [x] capacidad por unidad construida (K_i) &rightarrow; capacidad en kW/GW construidos
+*importante: la capacidad esta en kW, para la restriccion de capacidad se debe multiplicar la capacidad por la cantidad de horas del periodo para obtener la capacidad de la planta en kWh para ese periodo*
 10. [ ] demanda por periodo (D_t) &rightarrow; la idea tambien es probar con distintas demandas simulandon ciudades pequenas con bajo presupuesto o ciudades mas ricas
 
 11. [x] costo por unidad de almacenamiento (A)
