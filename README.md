@@ -15,14 +15,16 @@
 4. [x] valor GWh (S)
 5. [x] costo por unidad construida (CI_i) &rightarrow; costo por kW de capacidad
 6. [x] costo produccion GWh (C_i)
-7. [x] contaminacion por unidad construida (ZI_i) &rightarrow; tenemos contaminacion por unidad producida que contempla contaminacion inicial
-8. [x] contaminacion por GWh producido
+
+8. [x] contaminacion por GWh producido &rightarrow; contempla todas las fases de la produccion
 9. [x] capacidad por unidad construida (K_i) &rightarrow; capacidad en kW/GW construidos
 10. [ ] demanda por periodo (D_t) &rightarrow; la idea tambien es probar con distintas demandas simulandon ciudades pequenas con bajo presupuesto o ciudades mas ricas
-11. [x] costo por almacenamiento (A) &rightarrow; costo por capacidad en kW, la inversion es inicial
-12. [ ] perdida de energia por almacenamiento (constante)
-13. [ ] contaminacion de almacenamiento de unidad energ. (Alpha_i)
-14. [ ] cantidad maxima de instalaciones por energia (QM_i)
+
+11. [x] costo por unidad de almacenamiento (A)
+12. [x] capacidad maxima de kWh por unidad de almacenamiento
+13. [x] eficiencia de las unidades de almacenamiento (constante)
+14. [x] Contaminaci ́on por unidad de almacenamiento de energ ́ıa (AZ)
+15. [ ] Cantidad m ́axima disponible para instalaciones por energıa (QM_i)
 
 
 
@@ -50,7 +52,7 @@ fuente:
 
 ---
 
-- [x] **Costo de produccion sin contar inversion inicial por kWh producido**
+- [x] **Costo de produccion en dolares sin contar inversion inicial por kWh producido**
 
 ```python
 production_cost = {
@@ -109,7 +111,6 @@ overnight_cost_per_kW = {
     'gas': [950, 713, 1084, 1300],
     'coal': [3000, 6250, 5876, 3676],
     'oil': [1170, 1175, 713],
-
   }
 ```
 fuente:
@@ -118,12 +119,6 @@ fuente:
 - https://www.eia.gov/analysis/studies/powerplants/capitalcost/pdf/capital_cost_AEO2020.pdf
 - https://www.eia.gov/outlooks/aeo/assumptions/pdf/table_8.2.pdf
 - https://www.lazard.com/media/451086/lazards-levelized-cost-of-energy-version-130-vf.pdf
-
----
-
-- [ ] **Contaminacion por construccion inicial**
-
-El parametro contaminacion por produccion incluye este tipo de contaminacion
 
 ---
 
@@ -139,11 +134,25 @@ fuente:
 
 ---
 
-- [ ] **Perdida de energia por almacenamiento**
+- [x] **capacidad maxima de kWh, eficiencia y costo en dolares por unidad de almacenamiento**
+
+```python
+# kWh of storage per battery
+capacity_per_battery = 232
+price_per_battery = 103240
+battery_efficiency = 0.87
+```
+fuente: https://www.tesla.com/powerpack
 
 ---
 
-- [ ] **Contaminacion por bateria**
+- [x] **Contaminacion por bateria**
+```python
+# tonnes of CO2 per battery
+CO2_per_battery = 46.4
+```
+
+fuente: https://www.ffe.de/attachments/article/856/Carbon_footprint_EV_FfE.pdf
 
 ---
 
