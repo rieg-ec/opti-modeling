@@ -144,6 +144,8 @@ battery_efficiency = 0.87
 ```
 fuente: https://www.tesla.com/powerpack
 
+*se ocupo como modelo la bateria industrial de tesla*
+
 ---
 
 - [x] **Contaminacion por bateria**
@@ -153,6 +155,8 @@ CO2_per_battery = 46.4
 ```
 
 fuente: https://www.ffe.de/attachments/article/856/Carbon_footprint_EV_FfE.pdf
+
+*Se calculo multiplicando la contaminacion por kWh de capacidad por la capacidad de la bateria*
 
 ---
 
