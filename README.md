@@ -31,7 +31,7 @@ quedarian en total 13 parametros
 12. [x] capacidad maxima de kWh por unidad de almacenamiento
 13. [x] eficiencia de las unidades de almacenamiento (constante)
 14. [x] Contaminacin por unidad de almacenamiento de energia (AZ)
-15. [ ] Cantidad m ́axima disponible para instalaciones por energıa (QM_i)
+15. [ ] Cantidad maxima disponible para instalaciones por energıa (QM_i)
 
 
 
