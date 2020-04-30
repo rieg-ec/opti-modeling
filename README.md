@@ -8,6 +8,12 @@
 - [ ] armar modelo y resolver
 - [ ] analizar resultados
 
+### TO-DO modelo:
+1. ahora la contaminacion se mide solamente con contaminacion x kWh producido
+2. la capacidad o limite por energia es simplemente los kW de capacidad construidos multiplicado por las horas de un periodo &rightarrow; limite en kWh para cada periodo
+
+quedarian en total 13 parametros
+
 ### Datos recolectados:
 1. [x] tipos de energia (i)
 2. [x] periodos de tiempo (t)
@@ -96,7 +102,11 @@ fuente: https://bit.ly/3eOQdZ4
 
 - [x] **El limite esta dado por la capacidad en kW**
 
-el limite estara dado por los kW de capacidad construidos
+el limite estara dado por los kW de capacidad construidos,
+
+```python
+production_limit = initial_production
+```
 
 ---
 
@@ -120,18 +130,6 @@ fuente:
 - https://www.eia.gov/analysis/studies/powerplants/capitalcost/pdf/capital_cost_AEO2020.pdf
 - https://www.eia.gov/outlooks/aeo/assumptions/pdf/table_8.2.pdf
 - https://www.lazard.com/media/451086/lazards-levelized-cost-of-energy-version-130-vf.pdf
-
----
-
-- [x] **Precio por capacidad de almacenamiento**
-
-```python
-# price for storing a kWh from different fuentes
-price_per_kw_storage = [1389, 845, 1383]
-```
-fuente:
-- https://www.eia.gov/analysis/studies/powerplants/capitalcost/pdf/capital_cost_AEO2020.pdf
-- https://www.eia.gov/outlooks/aeo/assumptions/pdf/table_8.2.pdf
 
 ---
 
