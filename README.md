@@ -144,7 +144,7 @@ battery_efficiency = 0.87
 ```
 fuente: https://www.tesla.com/powerpack
 
-*se ocupo como modelo la bateria industrial de tesla*
+*se ocupo como modelo la bateria industrial de Tesla*
 
 ---
 
