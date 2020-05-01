@@ -114,7 +114,7 @@ production_limit = initial_production
 - [x] **Inversion inicial por energia por kW de capacidad**
 
 ```python
-# overnight costs taken from different fuentes for each enrgy type
+# overnight costs taken from different sources for each energy type
 overnight_cost_per_kW = {
     'solar': [1331, 1313, 1100],
     'wind': [1100, 1500, 1319],
