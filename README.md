@@ -1,7 +1,8 @@
 
 
 ### TO-DO
-- [ ] buscar datos para todos los parametros (con medias y desviaciones estandar)
+- [x] buscar datos para todos los parametros
+- [ ] armar parametro demanda buscando la demanda por periodo del dia y usando numeros al azar segun promedio y desv. estandar
 - [ ] armar set de datos de 3 tamanos distintos
 - [ ] crear jupyter notebook online
 - [ ] hacer analisis de los datos recolectados
