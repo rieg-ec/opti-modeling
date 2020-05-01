@@ -2,12 +2,13 @@
 
 ### TO-DO
 - [x] buscar datos para todos los parametros
-- [ ] armar parametro demanda buscando la demanda por periodo del dia y usando numeros al azar segun promedio y desv. estandar
-- [ ] armar set de datos de 3 tamanos distintos
-- [ ] crear jupyter notebook online
-- [ ] hacer analisis de los datos recolectados
-- [ ] armar modelo y resolver
-- [ ] analizar resultados
+- [ ] hacer que la demanda sea distinta para cada periodo dentro de un dia y para cada mes de un ano
+- [ ] el limite de produccion para algunas fuentes debe ser dependiente de la hora del dia y mes del ano
+- [ ] buscar demandas y presupuestos proporcionales
+- [ ] restriccion de satisfaccion de demanda
+- [ ] revisar conversion de unidades
+- [ ] corregir funcion objetivo en latex
+- [ ] recuperacion de inversion en x anos &rightarrow; definir x
 
 ### TO-DO modelo:
 1. ahora la contaminacion se mide solamente con contaminacion x kWh producido
