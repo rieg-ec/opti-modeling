@@ -3,42 +3,23 @@
 Minimize
  
 Subject To
- R1: - output[1,solar] - output[1,wind] - output[1,hydroelectric]
+ R0: 1248 prod_units[solar] + 1306.333333333333 prod_units[wind]
+   + 4516.5 prod_units[hydroelectric] + 7814.5 prod_units[nuclear]
+   + 1011.75 prod_units[gas] + 4700.5 prod_units[coal]
+   + 1019.333333333333 prod_units[oil] <= 1e+06
+ R2: - output[1,solar] - output[1,wind] - output[1,hydroelectric]
    - output[1,nuclear] - output[1,gas] - output[1,coal] - output[1,oil]
-   - 6.09 stored[0] + stored[1] = -1575
- R2: - output[2,solar] - output[2,wind] - output[2,hydroelectric]
-   - output[2,nuclear] - output[2,gas] - output[2,coal] - output[2,oil]
-   - 6.09 stored[1] + stored[2] = -6510
- R1461: - 6 prod_units[solar] + output[1,solar] <= 0
- R1462: - 6 prod_units[solar] + output[2,solar] <= 0
- R2921: - 6 prod_units[wind] + output[1,wind] <= 0
- R2922: - 6 prod_units[wind] + output[2,wind] <= 0
- R4381: - 6 prod_units[hydroelectric] + output[1,hydroelectric] <= 0
- R4382: - 6 prod_units[hydroelectric] + output[2,hydroelectric] <= 0
- R5841: - 6 prod_units[nuclear] + output[1,nuclear] <= 0
- R5842: - 6 prod_units[nuclear] + output[2,nuclear] <= 0
- R7301: - 6 prod_units[gas] + output[1,gas] <= 0
- R7302: - 6 prod_units[gas] + output[2,gas] <= 0
- R8761: - 6 prod_units[coal] + output[1,coal] <= 0
- R8762: - 6 prod_units[coal] + output[2,coal] <= 0
- R10221: - 6 prod_units[oil] + output[1,oil] <= 0
- R10222: - 6 prod_units[oil] + output[2,oil] <= 0
- R11680: prod_units[solar] <= 13
- R11681: prod_units[wind] <= 17
- R11682: prod_units[hydroelectric] <= 18
- R11683: prod_units[nuclear] <= 17
- R11684: prod_units[gas] <= 19
- R11685: prod_units[coal] <= 19
- R11686: prod_units[oil] <= 12
- R24834: stored[0] = 0
+   - 6.09 stored[0] + stored[1] = -6832
+ R1462: - 6 prod_units[solar] + output[1,solar] <= 0
+ R2922: - 6 prod_units[wind] + output[1,wind] <= 0
+ R4382: - 6 prod_units[hydroelectric] + output[1,hydroelectric] <= 0
+ R5842: - 6 prod_units[nuclear] + output[1,nuclear] <= 0
+ R7302: - 6 prod_units[gas] + output[1,gas] <= 0
+ R8762: - 6 prod_units[coal] + output[1,coal] <= 0
+ R10222: - 6 prod_units[oil] + output[1,oil] <= 0
+ R24835: stored[0] = 0
 Bounds
- prod_units[solar] free
- prod_units[wind] free
- prod_units[hydroelectric] free
- prod_units[nuclear] free
  prod_units[gas] free
- prod_units[coal] free
- prod_units[oil] free
  output[1,solar] free
  output[1,wind] free
  output[1,hydroelectric] free
@@ -46,15 +27,7 @@ Bounds
  output[1,gas] free
  output[1,coal] free
  output[1,oil] free
- output[2,solar] free
- output[2,wind] free
- output[2,hydroelectric] free
- output[2,nuclear] free
- output[2,gas] free
- output[2,coal] free
- output[2,oil] free
  stored[0] free
- stored[1] free
 Generals
  prod_units[solar] prod_units[wind] prod_units[hydroelectric]
  prod_units[nuclear] prod_units[gas] prod_units[coal] prod_units[oil]

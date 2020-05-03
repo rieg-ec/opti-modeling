@@ -8,6 +8,7 @@
 - [ ] restriccion de satisfaccion de demanda
 - [ ] revisar conversion de unidades
 - [ ] corregir funcion objetivo en latex
+- [ ] arreglar
 - [ ] recuperacion de inversion en x anos &rightarrow; definir x
 
 ### TO-DO modelo:
@@ -43,9 +44,25 @@ quedarian en total 13 parametros
 
 
 ---
-
+####### TO-DO
 - [ ] **Demanda por periodo**
 
+*como modelo tomaremos a estados unidos en el 2018*
+
+La demanda anual fue de 25.515.400.000 kWh, o en promedio 69.905.205 kWh diarios. 
+
+
+demanda en invierno es 36% mayor que en verano en promedio
+
+
+```python
+# demandas por periodo (hay cuatro periodos por dia)
+demand_daily = {period: demand for period, demand in zip()}
+```
+
+
+fuente:
+- https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/295225/Seasonal_variations_in_electricity_demand.
 
 ---
 
@@ -64,14 +81,15 @@ fuente:
 - [x] **Costo de produccion en dolares sin contar inversion inicial por kWh producido**
 
 ```python
+# parametro C_i costo de produccion por kWh en dolares
 production_cost = {
-    'solar': [0.17, 0.136],
-    'wind': [0.3, 0.32],
-    'hydroelectric': 0.5,
-    'nuclear': [2.10, 1.38, 1.6],
-    'gas': [2.1],
-    'coal': [0.98, 1.4, 1.73],
-    'oil': [5.4, 7.01, 5.63],
+    'solar': [0.0017, 0.00136],
+    'wind': [0.003, 0.0032],
+    'hydroelectric': 0.005,
+    'nuclear': [0.0210, 0.0138, 0.016],
+    'gas': [0.021],
+    'coal': [0.0098, 0.014, 0.0173],
+    'oil': [0.054, 0.0701, 0.0563],
 }
 ```
 
