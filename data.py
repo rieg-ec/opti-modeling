@@ -75,5 +75,3 @@ class Synthesize:
                     period_count += 1
 
         return periods_year
-
-print(Synthesize().synthesize_data(1460))
