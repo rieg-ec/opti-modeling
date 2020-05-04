@@ -2,7 +2,7 @@
 En este archivo recopilo los datos que descargue de
 https://www.eia.gov/beta/electricity/gridmonitor/dashboard/electric_overview/US48/US48
 con los cambios en la demanda en estados unidos por hora durante un mes desde el dia 4 de abril 2020 al
-3 de mayo 2020, y los cambios diarios de energia durante un ano.
+3 de mayo 2020, y los cambios diarios de energia durante el 2019.
 '''
 
 import pandas as pd
