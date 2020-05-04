@@ -5,6 +5,7 @@
 - [ ] revisar conversion de unidades
 - [ ] buscar datos sobre limite de unidades de produccion reales
 - [ ] analisis &rightarrow; grafico de cambio de demanda temporal, grafico de resultados por unidad de energia y almacenamiento
+- [ ] documentar y ordenar repo
 
 ### TO-DO modelo:
 1. ahora la contaminacion se mide solamente con contaminacion x kWh producido
