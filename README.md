@@ -1,15 +1,10 @@
 
 
 ### TO-DO
-- [x] buscar datos para todos los parametros
-- [ ] hacer que la demanda sea distinta para cada periodo dentro de un dia y para cada mes de un ano
 - [ ] el limite de produccion para algunas fuentes debe ser dependiente de la hora del dia y mes del ano
-- [ ] buscar demandas y presupuestos proporcionales
-- [ ] restriccion de satisfaccion de demanda
 - [ ] revisar conversion de unidades
-- [ ] corregir funcion objetivo en latex
-- [ ] arreglar
-- [ ] recuperacion de inversion en x anos &rightarrow; definir x
+- [ ] buscar datos sobre limite de unidades de produccion reales
+- [ ] analisis &rightarrow; grafico de cambio de demanda temporal, grafico de resultados por unidad de energia y almacenamiento
 
 ### TO-DO modelo:
 1. ahora la contaminacion se mide solamente con contaminacion x kWh producido
@@ -44,7 +39,8 @@ quedarian en total 13 parametros
 
 estados unidos invirtio ~ 350 billones USD, que multiplicado por 20 nos daria una inversion de ~ 7.000 billones USD, que seria un monto razonable para invertir como pais a un plazo de 20 anos para satisfacer la demanda.
 
-1 billion = 1.000.000.000 dolares
+1 billion = 1.000.000.000 dolares,
+por lo tanto 7.000 billones son 7.000.000.000.000 dolares
 ---
 ####### TO-DO
 - [ ] **Demanda por periodo**
