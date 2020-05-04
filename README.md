@@ -40,10 +40,10 @@ quedarian en total 13 parametros
 
 estados unidos invirtio ~ 350 billones USD, que multiplicado por 20 nos daria una inversion de ~ 7.000 billones USD, que seria un monto razonable para invertir como pais a un plazo de 20 anos para satisfacer la demanda.
 
-1 billion = 1.000.000.000 dolares,
-por lo tanto 7.000 billones son 7.000.000.000.000 dolares
+1 billion = 1.000.000.000 dolares, por lo tanto 7.000 billones son 7.000.000.000.000 dolares
+
 ---
-####### TO-DO
+
 - [ ] **Demanda por periodo**
 
 *como modelo tomaremos a estados unidos en el 2019*
