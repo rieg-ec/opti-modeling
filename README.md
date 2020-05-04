@@ -42,27 +42,20 @@ quedarian en total 13 parametros
 
 - [ ] **presupuesto**
 
+estados unidos invirtio ~ 350 billones USD, que multiplicado por 20 nos daria una inversion de ~ 7.000 billones USD, que seria un monto razonable para invertir como pais a un plazo de 20 anos para satisfacer la demanda.
 
+1 billion = 1.000.000.000 dolares
 ---
 ####### TO-DO
 - [ ] **Demanda por periodo**
 
-*como modelo tomaremos a estados unidos en el 2018*
+*como modelo tomaremos a estados unidos en el 2019*
 
-La demanda anual fue de 25.515.400.000 kWh, o en promedio 69.905.205 kWh diarios. 
-
-
-demanda en invierno es 36% mayor que en verano en promedio
-
-
-```python
-# demandas por periodo (hay cuatro periodos por dia)
-demand_daily = {period: demand for period, demand in zip()}
-```
+Los datos fueron recolectados en archivos json y manipulados en ```datos.py```.
 
 
 fuente:
-- https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/295225/Seasonal_variations_in_electricity_demand.
+- https://www.eia.gov/beta/electricity/gridmonitor/dashboard/custom/pending
 
 ---
 
