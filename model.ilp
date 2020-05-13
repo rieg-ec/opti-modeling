@@ -3,32 +3,44 @@
 Minimize
  
 Subject To
- R0: 1248 prod_units[solar] + 1306.333333333333 prod_units[wind]
+ budget_limit: 1248 prod_units[solar] + 1306.333333333333 prod_units[wind]
    + 4516.5 prod_units[hydroelectric] + 7814.5 prod_units[nuclear]
    + 1011.75 prod_units[gas] + 4700.5 prod_units[coal]
-   + 1019.333333333333 prod_units[oil] <= 1e+06
- R2: - output[1,solar] - output[1,wind] - output[1,hydroelectric]
-   - output[1,nuclear] - output[1,gas] - output[1,coal] - output[1,oil]
-   - 6.09 stored[0] + stored[1] = -6832
- R1462: - 6 prod_units[solar] + output[1,solar] <= 0
- R2922: - 6 prod_units[wind] + output[1,wind] <= 0
- R4382: - 6 prod_units[hydroelectric] + output[1,hydroelectric] <= 0
- R5842: - 6 prod_units[nuclear] + output[1,nuclear] <= 0
- R7302: - 6 prod_units[gas] + output[1,gas] <= 0
- R8762: - 6 prod_units[coal] + output[1,coal] <= 0
- R10222: - 6 prod_units[oil] + output[1,oil] <= 0
- R24835: stored[0] = 0
+   + 1019.333333333333 prod_units[oil] + 103240 storage <= 7e+11
+ demand_meet[804,805]: - output[805,solar] - output[805,wind]
+   - output[805,hydroelectric] - output[805,nuclear] - output[805,gas]
+   - output[805,coal] - output[805,oil] - 0.87 stored[804] + stored[805]
+   = -2.6762834747561092e+09
+ energy_limit[solar,805]: - 6 prod_units[solar] + output[805,solar] <= 0
+ energy_limit[wind,805]: - 6 prod_units[wind] + output[805,wind] <= 0
+ energy_limit[hydroelectric,805]: - 6 prod_units[hydroelectric]
+   + output[805,hydroelectric] <= 0
+ energy_limit[nuclear,805]: - 6 prod_units[nuclear] + output[805,nuclear]
+   <= 0
+ energy_limit[gas,805]: - 6 prod_units[gas] + output[805,gas] <= 0
+ energy_limit[coal,805]: - 6 prod_units[coal] + output[805,coal] <= 0
+ energy_limit[oil,805]: - 6 prod_units[oil] + output[805,oil] <= 0
+ prod_limit[solar]: prod_units[solar] <= 6e+07
+ prod_limit[wind]: prod_units[wind] <= 6e+07
+ prod_limit[gas]: prod_units[gas] <= 6e+07
+ prod_limit[oil]: prod_units[oil] <= 6e+07
+ storage_limit[804]: - 232 storage + stored[804] <= 0
 Bounds
+ prod_units[solar] free
+ prod_units[wind] free
  prod_units[gas] free
- output[1,solar] free
- output[1,wind] free
- output[1,hydroelectric] free
- output[1,nuclear] free
- output[1,gas] free
- output[1,coal] free
- output[1,oil] free
- stored[0] free
+ prod_units[oil] free
+ storage free
+ output[805,solar] free
+ output[805,wind] free
+ output[805,hydroelectric] free
+ output[805,nuclear] free
+ output[805,gas] free
+ output[805,coal] free
+ output[805,oil] free
+ stored[804] free
 Generals
  prod_units[solar] prod_units[wind] prod_units[hydroelectric]
  prod_units[nuclear] prod_units[gas] prod_units[coal] prod_units[oil]
+ storage
 End

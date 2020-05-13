@@ -1,8 +1,14 @@
 '''
 En este archivo recopilo los datos que descargue de
 https://www.eia.gov/beta/electricity/gridmonitor/dashboard/electric_overview/US48/US48
-con los cambios en la demanda en estados unidos por hora durante un mes desde el dia 4 de abril 2020 al
-3 de mayo 2020, y los cambios diarios de energia durante el 2019.
+con los cambios en la demanda en estados unidos por hora durante un mes desde el
+dia 4 de abril 2020 al 3 de mayo 2020, y los cambios diarios de energia durante el 2019.
+
+La funcion synthesize_data() retorna demandas para los n periodos que recibe como argumento.
+La demanda es calculada usando como base la demanda promedio para una hora del dia,
+esta se agrupa en periodos de 6 horas, y para cada  dia del ano se multiplica la
+demanda de cada periodo por la variacion de demanda de ese dia con respecto a la
+demanda diaria promedio.
 '''
 
 import pandas as pd
@@ -34,12 +40,15 @@ class Synthesize:
 
                 if datafile == 'data/hourly.json':
                     # en este archivo queremos saber los cambios hora a hora de la demanda
-                    timestamp = dicc['Timestamp (Hour Ending)'].replace(' EDT', '').replace('a.m.', 'AM').replace('p.m.', 'PM')
+                    timestamp = dicc['Timestamp (Hour Ending)'].replace(' EDT', '')\
+                                                                .replace('a.m.', 'AM')\
+                                                                .replace('p.m.', 'PM')
                     timestamp = datetime.strptime(timestamp, '%m/%d/%Y %I %p') # convertir timestamp a un objeto datetime
                     demand_per_period[timestamp.hour].append(demand)
                 elif datafile == 'data/daily.json':
                     # en este archivo queremos saber los cambios mes a mes en la demanda
-                    timestamp = datetime.strptime(dicc['Timestamp (Hour Ending)'].replace(', Eastern Time', ''), '%m/%d/%Y')
+                    timestamp = datetime.strptime(dicc['Timestamp (Hour Ending)']\
+                                                  .replace(', Eastern Time', ''), '%m/%d/%Y')
                     demand_per_period[timestamp.month].append(demand)
 
         if datafile == 'data/daily.json':
@@ -53,7 +62,7 @@ class Synthesize:
         daily = self.read_data(self.daily)
         hourly = self.read_data(self.hourly)
         for hour in hourly.keys():
-            hourly[hour] = np.mean(hourly[hour]) # solo nos interesa el promedio
+            hourly[hour] = np.mean(hourly[hour]) # ocupamos el promedio por hora durante el mes
         # ahora cambiamos el formato de hourly, en vez de ser 24 horas, agrupamos la demanda en periodos
         # de a 6 horas:
         periods_day = defaultdict(int) # periodos en un solo dia
@@ -64,7 +73,8 @@ class Synthesize:
             periods_day[i] = demand
 
         # calculamos el promedio de demanda diario para usar como referencia en la variacion porcentual
-        mean_demand_daily = sum([sum(i) for i in daily.values()]) / sum([len(i) for i in daily.values()])
+        mean_demand_daily = sum([sum(i) for i in
+                                 daily.values()]) / sum([len(i) for i in daily.values()])
         periods_year = defaultdict(int)
         period_count = 1
         for month in daily:
