@@ -1,38 +1,10 @@
 
 
 ### TO-DO
-- [ ] el limite de produccion para algunas fuentes debe ser dependiente de la hora del dia y mes del ano
 - [ ] revisar conversion de unidades
 - [ ] buscar datos sobre limite de unidades de produccion reales
 - [ ] analisis &rightarrow; grafico de cambio de demanda temporal, grafico de resultados por unidad de energia y almacenamiento
 - [ ] documentar y ordenar repo
-
-### TO-DO modelo:
-1. ahora la contaminacion se mide solamente con contaminacion x kWh producido
-2. la capacidad o limite por energia es simplemente los kW de capacidad construidos multiplicado por las horas de un periodo &rightarrow; limite en kWh para cada periodo
-
-quedarian en total 13 parametros
-
-### Datos recolectados:
-1. [x] tipos de energia (i)
-2. [x] periodos de tiempo (t)
-3. [ ] presupuesto (P) &rightarrow; depende de la demanda que ocupemos, la idea es probar con distintos presupuestos
-4. [x] valor GWh (S)
-5. [x] costo por unidad construida (CI_i) &rightarrow; costo por kW de capacidad
-6. [x] costo produccion GWh (C_i)
-
-8. [x] contaminacion por GWh producido &rightarrow; contempla todas las fases de la produccion
-9. [x] capacidad por unidad construida (K_i) &rightarrow; capacidad en kW/GW construidos
-*importante: la capacidad esta en kW, para la restriccion de capacidad se debe multiplicar la capacidad por la cantidad de horas del periodo para obtener la capacidad de la planta en kWh para ese periodo*
-10. [ ] demanda por periodo (D_t) &rightarrow; la idea tambien es probar con distintas demandas simulando ciudades pequenas con bajo presupuesto o ciudades mas ricas
-
-11. [x] costo por unidad de almacenamiento (A)
-12. [x] capacidad maxima de kWh por unidad de almacenamiento
-13. [x] eficiencia de las unidades de almacenamiento (constante)
-14. [x] Contaminacin por unidad de almacenamiento de energia (AZ)
-15. [ ] Cantidad maxima disponible para instalaciones por energıa (QM_i)
-
-
 
 # research:
 
