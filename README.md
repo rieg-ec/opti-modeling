@@ -8,7 +8,7 @@
 
 # research:
 
-- [ ] **presupuesto**
+- [x] **presupuesto**
 
 estados unidos invirtio ~ 350 billones USD, que multiplicado por 20 nos daria una inversion de ~ 7.000 billones USD, que seria un monto razonable para invertir como pais a un plazo de 20 anos para satisfacer la demanda.
 
@@ -16,7 +16,7 @@ estados unidos invirtio ~ 350 billones USD, que multiplicado por 20 nos daria un
 
 ---
 
-- [ ] **Demanda por periodo**
+- [x] **Demanda por periodo**
 
 *como modelo tomaremos a estados unidos en el 2019*
 
