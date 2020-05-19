@@ -1,5 +1,5 @@
 # Solution for model Energy production planning
-# Objective value = 1.8208596841477728e+11
+# Objective value = 1.8208596841477216e+11
 prod_units[solar] 120000000
 prod_units[wind] 120000000
 prod_units[hydroelectric] 56013679
@@ -2354,8 +2354,8 @@ output[335,gas] 0
 output[335,coal] 0
 output[335,oil] 0
 output[336,solar] 0
-output[336,wind] 720000000
-output[336,hydroelectric] 3.0494513848246396e+08
+output[336,wind] 688863064.482464
+output[336,hydroelectric] 336082074
 output[336,nuclear] 0
 output[336,gas] 0
 output[336,coal] 0
@@ -2382,8 +2382,8 @@ output[339,gas] 0
 output[339,coal] 0
 output[339,oil] 0
 output[340,solar] 0
-output[340,wind] 6.6372866595750952e+08
-output[340,hydroelectric] 336082074
+output[340,wind] 720000000
+output[340,hydroelectric] 2.7981073995750952e+08
 output[340,nuclear] 0
 output[340,gas] 0
 output[340,coal] 0
