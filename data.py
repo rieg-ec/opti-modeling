@@ -11,7 +11,6 @@ demanda de cada periodo por la variacion de demanda de ese dia con respecto a la
 demanda diaria promedio.
 '''
 
-import pandas as pd
 from datetime import datetime
 from collections import defaultdict
 import numpy as np
