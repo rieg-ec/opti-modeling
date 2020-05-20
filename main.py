@@ -74,7 +74,7 @@ kg_CO2_per_kwh = {
 #                     limit in zip(sources, np.array([random.randint(9448046//6, 267628704//6) for _ in
 #                                                                                 range(len(sources))]))}
 
-prod_units_limit = {source:120000000 for source in sources}
+prod_units_limit = {source:150000000 for source in sources}
 
 from gurobipy import GRB, Model, quicksum
 

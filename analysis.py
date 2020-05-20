@@ -119,7 +119,7 @@ ax.tick_params(axis='both', which='major', labelsize='15')
 ax.xaxis.set_major_locator(MultipleLocator(100))
 
 for source in output:
-    ax.plot([i for i in range(len(output[source]))][0::4], output[source][0::4],
+    ax.plot([i for i in range(len(output[source]))][0::5], output[source][0::5],
             linewidth=3, label=source)
 
 ax.legend(loc='upper right', fontsize=20)
