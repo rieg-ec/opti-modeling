@@ -137,18 +137,18 @@ if __name__ == '__main__':
     model.optimize()
     print('\n---------------------\n')
 
-    with open('slack.text', 'w') as file:
+    with open('gurobi_files/slack.text', 'w') as file:
         for constr in model.getConstrs():
             file.writelines(f"{constr}: {constr.getAttr('slack')}\n")
         file.close()
 
-    model.write('model.sol')
+    model.write('gurobi_files/model.sol')
 
-    with open('model_sol.txt', 'w') as file:
+    with open('gurobi_files/model_sol.txt', 'w') as file:
         for var in model.getVars():
             file.write(f'{var.varName} {var.x}\n')
         file.close()
 
     if model.status == GRB.INFEASIBLE:
         model.computeIIS()
-        model.write('model.ilp')
+        model.write('gurobi_files/model.ilp')

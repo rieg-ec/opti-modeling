@@ -69,7 +69,7 @@ fig.savefig('plots/demand_graphs.png')
 ## results analysis
 
 vars = []
-with open('model_sol.txt', 'r') as file:
+with open('gurobi_files/model_sol.txt', 'r') as file:
     for result in file.readlines():
         varname = result.split(' ')[0]
         value = result.split(' ')[1]
