@@ -2,3 +2,6 @@ model.json
 .ipynb_checkpoints
 __pycache__
 .DS_Store
+calc.py
+PautaEficiente.py
+
