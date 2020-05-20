@@ -68,7 +68,7 @@ class Synthesize:
         periods_day = defaultdict(int) # periodos en un solo dia
         for i in range(1, n_periods_day+1):
             demand = 0
-            for j in range((i-1)*int(1+24/n_periods_day), i*int(24/n_periods_day)):
+            for j in range((i-1)*int(24/n_periods_day), i*int(24/n_periods_day)):
                 demand += hourly[j]
             periods_day[i] = demand
 
