@@ -5,40 +5,63 @@ Minimize
 Subject To
  budget_limit: 1248 prod_units[solar] + 1306.333333333333 prod_units[wind]
    + 4516.5 prod_units[hydroelectric] + 7814.5 prod_units[nuclear]
-   + 1011.75 prod_units[gas] + 4700.5 prod_units[coal]
+   + 915.6666666666666 prod_units[gas] + 4700.5 prod_units[coal]
    + 1019.333333333333 prod_units[oil] + 103240 storage <= 7e+11
- demand_meet[804,805]: - output[805,solar] - output[805,wind]
-   - output[805,hydroelectric] - output[805,nuclear] - output[805,gas]
-   - output[805,coal] - output[805,oil] - 0.87 stored[804] + stored[805]
-   = -2.6762834747561092e+09
- energy_limit[solar,805]: - 6 prod_units[solar] + output[805,solar] <= 0
- energy_limit[wind,805]: - 6 prod_units[wind] + output[805,wind] <= 0
- energy_limit[hydroelectric,805]: - 6 prod_units[hydroelectric]
-   + output[805,hydroelectric] <= 0
- energy_limit[nuclear,805]: - 6 prod_units[nuclear] + output[805,nuclear]
+ demand_meet[806,807]: - output[807,solar] - output[807,wind]
+   - output[807,hydroelectric] - output[807,nuclear] - output[807,gas]
+   - output[807,coal] - output[807,oil] - 0.87 stored[806] + stored[807]
+   = -3.0730799491452937e+09
+ demand_meet[807,808]: - output[808,solar] - output[808,wind]
+   - output[808,hydroelectric] - output[808,nuclear] - output[808,gas]
+   - output[808,coal] - output[808,oil] - 0.87 stored[807] + stored[808]
+   = -3.1508322962439289e+09
+ energy_limit[solar,807]: - 6 prod_units[solar] + output[807,solar] <= 0
+ energy_limit[solar,808]: - 6 prod_units[solar] + output[808,solar] <= 0
+ energy_limit[wind,807]: - 6 prod_units[wind] + output[807,wind] <= 0
+ energy_limit[wind,808]: - 6 prod_units[wind] + output[808,wind] <= 0
+ energy_limit[hydroelectric,807]: - 6 prod_units[hydroelectric]
+   + output[807,hydroelectric] <= 0
+ energy_limit[hydroelectric,808]: - 6 prod_units[hydroelectric]
+   + output[808,hydroelectric] <= 0
+ energy_limit[nuclear,807]: - 6 prod_units[nuclear] + output[807,nuclear]
    <= 0
- energy_limit[gas,805]: - 6 prod_units[gas] + output[805,gas] <= 0
- energy_limit[coal,805]: - 6 prod_units[coal] + output[805,coal] <= 0
- energy_limit[oil,805]: - 6 prod_units[oil] + output[805,oil] <= 0
- prod_limit[solar]: prod_units[solar] <= 6e+07
- prod_limit[wind]: prod_units[wind] <= 6e+07
- prod_limit[gas]: prod_units[gas] <= 6e+07
- prod_limit[oil]: prod_units[oil] <= 6e+07
- storage_limit[804]: - 232 storage + stored[804] <= 0
+ energy_limit[nuclear,808]: - 6 prod_units[nuclear] + output[808,nuclear]
+   <= 0
+ energy_limit[gas,807]: - 6 prod_units[gas] + output[807,gas] <= 0
+ energy_limit[gas,808]: - 6 prod_units[gas] + output[808,gas] <= 0
+ energy_limit[coal,807]: - 6 prod_units[coal] + output[807,coal] <= 0
+ energy_limit[coal,808]: - 6 prod_units[coal] + output[808,coal] <= 0
+ energy_limit[oil,807]: - 6 prod_units[oil] + output[807,oil] <= 0
+ energy_limit[oil,808]: - 6 prod_units[oil] + output[808,oil] <= 0
+ prod_limit[solar]: prod_units[solar] <= 1.2e+08
+ prod_limit[wind]: prod_units[wind] <= 1.2e+08
+ prod_limit[gas]: prod_units[gas] <= 1.2e+08
+ prod_limit[oil]: prod_units[oil] <= 1.2e+08
+ storage_limit[806]: - 232 storage + stored[806] <= 0
+ storage_limit[807]: - 232 storage + stored[807] <= 0
 Bounds
  prod_units[solar] free
  prod_units[wind] free
+ prod_units[hydroelectric] free
  prod_units[gas] free
  prod_units[oil] free
  storage free
- output[805,solar] free
- output[805,wind] free
- output[805,hydroelectric] free
- output[805,nuclear] free
- output[805,gas] free
- output[805,coal] free
- output[805,oil] free
- stored[804] free
+ output[807,solar] free
+ output[807,wind] free
+ output[807,hydroelectric] free
+ output[807,nuclear] free
+ output[807,gas] free
+ output[807,coal] free
+ output[807,oil] free
+ output[808,solar] free
+ output[808,wind] free
+ output[808,hydroelectric] free
+ output[808,nuclear] free
+ output[808,gas] free
+ output[808,coal] free
+ output[808,oil] free
+ stored[806] free
+ stored[807] free
 Generals
  prod_units[solar] prod_units[wind] prod_units[hydroelectric]
  prod_units[nuclear] prod_units[gas] prod_units[coal] prod_units[oil]
