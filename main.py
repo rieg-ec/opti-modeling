@@ -10,7 +10,7 @@ sources = ['solar', 'wind', 'hydroelectric', 'nuclear', 'gas', 'coal', 'oil'] # 
 periods = [i for i in range(1, N_PERIODS_YEAR+1)] # conjunto _t
 
 # parametros constantes
-P = 700000000000 # presupuesto en dolares # 7000000000000
+P = 700000000000 # presupuesto en dolares
 
 pi = 40 # cantidad de anos en los que se espera recuperar la inversion inicial
 
