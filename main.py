@@ -2,8 +2,8 @@ import numpy as np
 import random
 from data import Synthesize
 
-PERIOD_LENGTH = 6 # numero de horas de cada periodo
-N_PERIODS_YEAR = int((24/PERIOD_LENGTH) * 365) # numero de periodos per year
+Y = 6 # numero de horas de cada periodo
+N_PERIODS_YEAR = int((24/Y) * 365) # numero de periodos per year
 
 # conjuntos
 sources = ['solar', 'wind', 'hydroelectric', 'nuclear', 'gas', 'coal', 'oil'] # conjunto _i
@@ -104,7 +104,7 @@ model.addConstrs((b_t[period] == quicksum(x_it[period, source] for source in sou
                                                                                      name='demand_meet')
 
 # restriccion 4: produccion de energia limitada
-model.addConstrs((x_it[period, source] <= xi_i[source] * PERIOD_LENGTH for source in sources
+model.addConstrs((x_it[period, source] <= xi_i[source] * Y for source in sources
                                                                                 for period in periods),
                                                                                  name='energy_limit')
 # restriccion 5: construccion de kw de capacidad limitadas
