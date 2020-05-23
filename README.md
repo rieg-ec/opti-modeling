@@ -1,11 +1,4 @@
 
-
-### TO-DO
-- [ ] revisar conversion de unidades
-- [ ] buscar datos sobre limite de unidades de produccion reales
-- [ ] analisis &rightarrow; grafico de cambio de demanda temporal, grafico de resultados por unidad de energia y almacenamiento
-- [ ] documentar y ordenar repo
-
 # research:
 
 - [x] **presupuesto**
@@ -30,9 +23,9 @@ fuente:
 
 - [x] **Precio de un kWh**
 
-10.21 cents per kWh average, 15.8 cents in Chile
+10.21 cents per kWh average
 
-en pesos: 87.55 y 135 pesos respectivamente
+en pesos: 87.55
 
 fuente:
 - https://bit.ly/3eNkc3O
@@ -83,12 +76,6 @@ fuente: https://bit.ly/3eOQdZ4
 ---
 
 - [x] **El limite esta dado por la capacidad en kW**
-
-el limite estara dado por los kW de capacidad construidos,
-
-```python
-production_limit = initial_production
-```
 
 ---
 
