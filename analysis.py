@@ -1,6 +1,5 @@
 import re
 import numpy as np
-import matplotlib.pyplot as plt
 from collections import defaultdict
 from data import Synthesize
 from main import demand
@@ -8,8 +7,7 @@ from matplotlib import pyplot as plt
 from matplotlib.ticker import MultipleLocator, AutoMinorLocator
 from random import randint
 
-# ## demand graphs
-#
+### demand graphs
 hourly = Synthesize().read_data(Synthesize().hourly)
 # usamos un solo dia ocupando los promedios del mes para ver la variacion segun la hora
 hourly = [np.mean(v) for v in hourly.values()]
