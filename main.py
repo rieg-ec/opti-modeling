@@ -5,28 +5,21 @@ from gurobipy import GRB, quicksum
 from gurobipy import Model as GurobiModel
 
 class Model(GurobiModel):
+    Y = 6 # numero de horas de cada periodo
+    N_PERIODS_YEAR = int((24/Y) * 365) # numero de periodos per year
+    D_t = Synthesize().synthesize_data(N_PERIODS_YEAR) # diccionario tipo
+                                                        # {periodo:demanda}
+    sources = ['solar', 'wind', 'hydroelectric', 'nuclear', 'gas', 'coal', 'oil'] # conjunto _i
+    periods = [i for i in range(1, N_PERIODS_YEAR+1)] # conjunto _t
 
     def __init__(self, name):
         super().__init__(name)
-        self.Y = 6 # numero de horas de cada periodo
-        N_PERIODS_YEAR = int((24/self.Y) * 365) # numero de periodos per year
-
-        # conjuntos
-        self.sources = ['solar', 'wind', 'hydroelectric', 'nuclear', 'gas', 'coal', 'oil'] # conjunto _i
-        self.periods = [i for i in range(1, N_PERIODS_YEAR+1)] # conjunto _t
-
-        # parametros constantes
         self.P = 700000000000 # presupuesto en dolares
-
         self.pi = 40 # cantidad de anos en los que se espera recuperar la inversion inicial
-
-        self.D_t = Synthesize().synthesize_data(N_PERIODS_YEAR) # diccionario tipo {periodo:demanda}
-
         self.AC = 103240 # costo por bateria en dolares
         self.AQ = 232 # capacidad de almacenamiento en kWh por bateria
         self.AE = 0.87 # eficiencia de energia de las baterias
         self.AZ = 46400 # kgs de CO2 emitidos por bateria producida
-
         self.S = 0.1 # valor por kWh en el mercado promedio en dolares
 
         # parametro CI_i costo inicial por kW de capacidad en dolares
@@ -136,18 +129,13 @@ if __name__ == '__main__':
     model = Model('Energy production planning')
     model.optimize()
     print('\n---------------------\n')
-    # with open('gurobi_files/slack.text', 'w') as file:
-    #     for constr in model.getConstrs():
-    #         file.writelines(f"{constr}: {constr.getAttr('slack')}\n")
-    #     file.close()
-    #
-    # model.write('gurobi_files/model.sol')
-    #
-    # with open('gurobi_files/model_sol.txt', 'w') as file:
-    #     for var in model.getVars():
-    #         file.write(f'{var.varName} {var.x}\n')
-    #     file.close()
-    #
-    # if model.status == GRB.INFEASIBLE:
-    #     model.computeIIS()
-    #     model.write('gurobi_files/model.ilp')
+    with open('gurobi_files/slack.text', 'w') as file:
+        for constr in model.getConstrs():
+            file.writelines(f"{constr}: {constr.getAttr('slack')}\n")
+        file.close()
+
+    model.write('gurobi_files/model.sol')
+
+    if model.status == GRB.INFEASIBLE:
+        model.computeIIS()
+        model.write('gurobi_files/model.ilp')
