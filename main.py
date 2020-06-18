@@ -3,7 +3,6 @@ import random
 from data import Synthesize
 from gurobipy import GRB, quicksum
 from gurobipy import Model as GurobiModel
-from analysis import plot_demand, plot_results
 
 class Model(GurobiModel):
     Y = 6 # numero de horas de cada periodo
@@ -123,9 +122,9 @@ class Model(GurobiModel):
                        for source in self.sources for period in self.periods) + a * self.AZ
 
         self.setObjective(obj, GRB.MINIMIZE)
-        super().optimize(*args, **kwargs)
+        super().optimize()
 
-    def save_results(path='gurobi_files'):
+    def save_results(self, path='gurobi_files'):
         with open(path + '/slack.text', 'w') as file:
             for constr in model.getConstrs():
                 file.writelines(f"{constr}: {constr.getAttr('slack')}\n")
@@ -138,6 +137,8 @@ class Model(GurobiModel):
             model.write(path + '/model.ilp')
 
 if __name__ == '__main__':
+    from analysis import plot_demand, plot_results # avoids circular imports
+
     model = Model('Energy production planning')
     model.optimize()
     model.save_results()
