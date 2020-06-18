@@ -3,6 +3,7 @@ import random
 from data import Synthesize
 from gurobipy import GRB, quicksum
 from gurobipy import Model as GurobiModel
+from analysis import plot_demand, plot_results
 
 class Model(GurobiModel):
     Y = 6 # numero de horas de cada periodo
@@ -72,7 +73,7 @@ class Model(GurobiModel):
     def __setattr__(self, attr, value):
         super().__dict__[attr] = value
 
-    def optimize(self, *args, **kwargs):
+    def optimize(self):
         xi_i = self.addVars(self.sources, vtype=GRB.INTEGER, name='prod_units')
         a = self.addVar(vtype=GRB.INTEGER, name='storage')
         x_it = self.addVars(self.periods, self.sources, vtype=GRB.CONTINUOUS, name='output')
@@ -124,18 +125,21 @@ class Model(GurobiModel):
         self.setObjective(obj, GRB.MINIMIZE)
         super().optimize(*args, **kwargs)
 
+    def save_results(path='gurobi_files'):
+        with open(path + '/slack.text', 'w') as file:
+            for constr in model.getConstrs():
+                file.writelines(f"{constr}: {constr.getAttr('slack')}\n")
+            file.close()
+
+        model.write(path + '/model.sol')
+
+        if model.status == GRB.INFEASIBLE:
+            model.computeIIS()
+            model.write(path + '/model.ilp')
 
 if __name__ == '__main__':
     model = Model('Energy production planning')
     model.optimize()
-    print('\n---------------------\n')
-    with open('gurobi_files/slack.text', 'w') as file:
-        for constr in model.getConstrs():
-            file.writelines(f"{constr}: {constr.getAttr('slack')}\n")
-        file.close()
-
-    model.write('gurobi_files/model.sol')
-
-    if model.status == GRB.INFEASIBLE:
-        model.computeIIS()
-        model.write('gurobi_files/model.ilp')
+    model.save_results()
+    plot_demand()
+    plot_results()
