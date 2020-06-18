@@ -25,7 +25,7 @@ def plot_demand(path='plots'):
     ax1.set_title('Energy Demand per Hour', fontsize=30)
     ax2.set_title('Energy Demand per Month', fontsize=30)
     ax3.set_title('Energy Demand per Period', fontsize=30)
-    ax4.set_title('Energy Demand per Period', fontsize=20)
+    ax4.set_title('Energy Demand per Period', fontsize=30)
 
     ax1.set_xlabel('Hour', fontsize=30)
     ax1.set_ylabel('Demand (kWh)', fontsize=30)
