@@ -6,8 +6,9 @@ from main import Model
 from matplotlib import pyplot as plt
 from matplotlib.ticker import MultipleLocator, AutoMinorLocator
 from random import randint
+from os import path
 
-def plot_demand(path='plots'):
+def plot_demand(where=''):
     hourly = Synthesize().read_data(Synthesize().hourly)
     # usamos un solo dia ocupando los promedios del mes para ver la variacion segun la hora
     hourly = [np.mean(v) for v in hourly.values()]
@@ -61,11 +62,11 @@ def plot_demand(path='plots'):
     ax3.plot([i for i in Model.D_t.values()])
     ax4.plot(random_days)
 
-    fig.savefig(path + '/demand_graphs.png')
+    fig.savefig(path.join(where, 'plots', 'demand_graphs.png'))
 
-def plot_results(path='plots'):
+def plot_results(where=''):
     vars = []
-    with open('gurobi_files/model.sol', 'r') as file:
+    with open(path.join(where, 'gurobi_files', 'model.sol'), 'r') as file:
         for _ in range(2):
             file.readline() # saltar 2 primeras lineas
         for result in file.readlines():
@@ -83,18 +84,20 @@ def plot_results(path='plots'):
             values_prod_units.append(float(var[1]))
         elif var[0] == 'storage':
             sources_prod_units.append('storage')
-            values_prod_units.append(float(var[1]))
+            values_prod_units.append(float(var[1]) * Model.AQ)
 
-    fig, ax = plt.subplots(1, 1, figsize=(20, 10))
-
-    ax.set_title('Purchased kW of capacity per energy source and purchased storage capacity', fontsize=20)
-
-    ax.set_xlabel('Source', fontsize=20)
-    ax.set_ylabel('kW of capacity', fontsize=20)
-    ax.tick_params(axis='both', which='major', labelsize='15')
-
-    ax.bar(sources_prod_units, values_prod_units, color='green')
-    fig.savefig(path + '/prod_units.png')
+    x_pos = [i for i, _ in enumerate(sources_prod_units)]
+    plt.figure(figsize=(10, 8))
+    plt.tight_layout()
+    plt.bar(x_pos, values_prod_units, color='green', align='center')
+    plt.xticks(x_pos, sources_prod_units, fontsize=14)
+    plt.xlim(-0.7, max(x_pos)+1)
+    plt.title('Purchased kW of capacity per energy source and purchased storage capacity',
+        x=0.48, y=1.08, fontsize=17)
+    plt.xlabel('Source', fontsize=15)
+    plt.ylabel('kW of capacity', fontsize=15)
+    plt.setp(plt.gca().get_xticklabels(), rotation=15, horizontalalignment='right')
+    plt.savefig(path.join(where, 'plots', 'prod_units.png'))
 
     ## output graph
     output = defaultdict(list)
@@ -109,7 +112,7 @@ def plot_results(path='plots'):
 
     fig, ax = plt.subplots(1, 1, figsize=(20, 10))
 
-    ax.set_title('Purchased kW of capacity per energy source and purchased storage capacity', fontsize=20)
+    ax.set_title('Energy output per energy source', fontsize=20)
 
     ax.set_xlabel('Periods', fontsize=20)
     ax.set_ylabel('Energy output', fontsize=20)
@@ -122,4 +125,4 @@ def plot_results(path='plots'):
 
     ax.legend(loc='upper right', fontsize=20)
     ax.set_xlim(xmin=0.0)
-    fig.savefig(path + '/output.png')
+    fig.savefig(path.join(where, 'plots', 'output.png'))
