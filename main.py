@@ -16,7 +16,7 @@ class Model(GurobiModel):
     P = 700000000000 # presupuesto en dolares
     pi = 40 # cantidad de anos en los que se espera recuperar la inversion inicial
     AC = 103240 # costo por bateria en dolares
-    AQ = Y * 232 # capacidad de almacenamiento en kWh por bateria por periodo
+    AQ = 232 # capacidad de almacenamiento en kWh por bateria por periodo
     AE = 0.87 # eficiencia de energia de las baterias
     AZ = 46400 # kgs de CO2 emitidos por bateria producida
     S = 0.1 # valor por kWh en el mercado promedio en dolares
@@ -65,7 +65,7 @@ class Model(GurobiModel):
         'coal': 0.888,
         'oil': 0.733,
         }
-
+    # buying limit of capacity per source
     QM_i = {source:150000000 for source in sources}
 
     def __init__(self, name):
@@ -75,10 +75,13 @@ class Model(GurobiModel):
         super().__dict__[attr] = value
 
     def optimize(self):
-        xi_i = self.addVars(self.sources, vtype=GRB.INTEGER, name='prod_units')
-        a = self.addVar(vtype=GRB.INTEGER, name='storage')
-        x_it = self.addVars(self.periods, self.sources, vtype=GRB.CONTINUOUS, name='output')
-        b_t = self.addVars(self.periods, vtype=GRB.CONTINUOUS, name='stored')
+        a = self.addVar(vtype=GRB.INTEGER, name='storage', lb=0)
+        xi_i = self.addVars(self.sources, vtype=GRB.INTEGER,
+                            name='prod_units', lb=0)
+        x_it = self.addVars(self.periods, self.sources,
+                            vtype=GRB.CONTINUOUS, name='output', lb=0)
+        b_t = self.addVars(self.periods, vtype=GRB.CONTINUOUS,
+                        name='stored', lb=0)
 
         self.update()
 
@@ -109,16 +112,8 @@ class Model(GurobiModel):
         # restriccion 6: cantidad maxima de almacenamiento
         self.addConstrs((b_t[period] <= a * self.AQ for period in self.periods), name='storage_limit')
 
-        # Naturaleza de las variables
-        # restriccion 7:
-        self.addConstrs((x_it[period, source] >= 0 for source in self.sources for period in self.periods), name='v_nature_7')
-        # restriccion 8:
-        self.addConstrs((xi_i[source] >= 0 for source in self.sources), name='v_nature_8')
-        # restriccion 9:
-        self.addConstr(a >= 0, name='v_nature_9')
-        # restriccion 10 y 11:
-        self.addConstrs((b_t[period] >= 0 for idx, period in enumerate(self.periods) if idx != 0), name='v_nature_10')
-        self.addConstrs((b_t[period] == 0 for idx, period in enumerate(self.periods) if idx == 0), name='v_nature_11')
+        # restriccion 7: comenzamos sin baterias
+        self.addConstrs((b_t[period] == 0 for idx, period in enumerate(self.periods) if idx == 0))
 
         obj = quicksum(x_it[period, source] * self.Z_i[source]\
                        for source in self.sources for period in self.periods) + a * self.AZ
