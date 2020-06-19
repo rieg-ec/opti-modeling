@@ -1,0 +1,9 @@
+QM_i *= 1.7
+
+el modelo ocupa el maximo en eolica y se reparte el resto entre solar, hidro y gas.
+
+No ocupa el maximo en solar porque contamina 4 veces mas que hidroelectrica, pero
+hidroelectrica es muy cara, por lo que si usaramos hidroelectrica no cumpliriamos la demanda.
+
+gas es muy barata de construir, por lo que el modelo la compra en mayor cantidad que hidro,
+pero trata de no usarla si no es necesario porque contamina demasiado.

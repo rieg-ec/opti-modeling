@@ -1,0 +1,7 @@
+se cambio el periodo en el que se espera recuperar la inversion a 20 anos
+
+
+el modelo ahora invierte en energias con costo inicial bajo (gas < solar <
+eolica < petroleo < hidroelectrica las 4 mas baratas) y logicamente siempre que puede
+intenta no ocupar las energias que mas contaminan a no ser que la demanda lo obligue,
+y tambien porque las energias verdes tienen costos de produccion mas baratos.

@@ -1,0 +1,18 @@
+AE = 0.95
+AZ *= 0.5
+AC *= 0.8
+AQ *= 2
+P *= 1.5
+
+QM_i *= 0.7 para gas, petroleo y carbon
+demanda *= 1.2
+
+al hacer las baterias mas eficientes/baratas/capaces y por lo tanto convenientes,
+y limitar las energias no verdes, aumentar la demanda y aumentar el presupuesto
+(escenario realista a futuro) el modelo opta por invertir mas en baterias y producir
+cercano al maximo en energias verdes en todo momento, y almacenar energia si la demanda es
+inferior a la capacidad.
+
+De hecho, el modelo compra mas capacidad en baterias que en plantas de petroleo y gas,
+a pesar de que las baterias no produzcan energia por si solas y por lo tanto haya que invertir ademas
+en producir la energia para almacenarla.
